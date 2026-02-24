@@ -5,6 +5,10 @@ document.addEventListener('click', (e) => {
   const wall = document.querySelector('.wall');
   const f = wall.getBoundingClientRect();
 
+  if (!spider || !wall) {
+    return;
+  }
+
   let x = e.clientX - f.left - wall.clientLeft - spider.offsetWidth / 2;
   let y = e.clientY - f.top - wall.clientTop - spider.offsetHeight / 2;
   const insideWall =
